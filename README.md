@@ -7,3 +7,5 @@ package IA : Tuan N
 class windows :David N
 
 class main : Sandric C
+
+class Labyrinthe : Yunus S
