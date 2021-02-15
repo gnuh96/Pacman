@@ -1,5 +1,9 @@
-#Zditeur des codes:
-class windows :David N
+#Editeur des codes:
+
 package model: Saad L
+
 package IA : Tuan N
-main : Sandric C
+
+class windows :David N
+
+class main : Sandric C
