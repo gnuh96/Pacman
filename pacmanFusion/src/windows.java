@@ -1,53 +1,63 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class windows extends JFrame{
+public class windows extends javax.swing.JFrame{
 
-    private ImageIcon image1;
-    private JLabel label1;
+    private ImageIcon image1;   //image
+    private JLabel label;   //JLabel = à intérieur de JFrame, de la fenêtre
+    private JFrame frame;   //JFrame c'est la fenêtre
 
     public windows(){
-        super("Pac-Man");   //"titre" de la fenetre
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.setSize(800, 600); //taille de la fenetre
-        setResizable(false); //interdire le redimensionnement de la fenetre
-        this.setLocationRelativeTo(null);
 
+        //ajout image de fond
+        image1 = new ImageIcon(this.getClass().getResource("resources/menu.jpg"));
+        label = new JLabel(image1);
+        label.setSize(800,600); //taille de l'image dans la fenêtre
+        frame = new JFrame("Pac-Man");   //"titre" de la fenêtre
+        frame.add(label); //ajout de l'image dans JLabel
+        frame.setSize(800, 630); //taille de la fenêtre
+        frame.setLayout(null);
+        frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
+        frame.setResizable(false); //interdire le redimensionnement de la fenêtre
+        frame.setLocationRelativeTo(null); //méthode permettant d'annuler la disposition de la fenêtre par défaut (en haut à droite)
+        frame.setVisible(true); //obligatoire pour afficher la fenêtre graphique
 
-        JPanel contentPane = (JPanel) this.getContentPane();
-        setContentPane(MenuPrincipal());    //appel du menu principal
-        image1 = new ImageIcon(getClass().getResource("resources/png/menu.jpg"));
-        label1 = new JLabel(image1);
-        add(label1);
-    }
-    private JPanel MenuPrincipal(){
-        JPanel panel = new JPanel();
-        //panel.setLayout(new FlowLayout());
-        //setLayout(null);
         // mise en place des boutons
         JButton bouton = new JButton("Commencer la partie");
-        //pas réussi à déplacer le bouton
-        bouton.setBounds(190, 200, 900, 30);
-        panel.add(bouton);
+        bouton.setBounds(310, 165, 170, 55); // position bouton 1
+        label.add(bouton);
 
         JButton bouton2 = new JButton("Charger une partie");
-        panel.add(bouton2);
+        bouton2.setBounds(310, 300, 170, 50); // position bouton 2
+        label.add(bouton2);
 
         JButton bouton3 = new JButton("Mode multijoueur");
-        panel.add(bouton3);
+        bouton3.setBounds(310, 350, 170, 50); // position bouton 3
+        label.add(bouton3);
 
         JButton bouton4 = new JButton("Options");
-        panel.add(bouton4);
+        bouton4.setBounds(310, 400, 170, 50); // position bouton 4
+        label.add(bouton4);
 
         JButton bouton5 = new JButton("Règles du jeu");
-        panel.add(bouton5);
+        bouton5.setBounds(310, 450, 170, 50); // position bouton 5
+        label.add(bouton5);
 
-        JButton bouton6 = new JButton("Règles du jeu");
-        panel.add(bouton6);
+        JButton bouton6 = new JButton("Quitter le jeu");
+        bouton6.setBounds(310, 500, 170, 50); // position bouton 6
+        label.add(bouton6);
 
-        JButton bouton7 = new JButton("Quitter le jeu");
-        panel.add(bouton7);
-
-        return panel;
+        bouton.addActionListener(new ActionListener() {
+                                      public void actionPerformed(ActionEvent e) {
+                                          new model.PacFrame();
+                                      }
+                                  });
+        bouton6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0); //on clique sur le bouton, la fenêtre se ferme
+            }
+        });
     }
 
 }
