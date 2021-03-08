@@ -7,7 +7,7 @@ package model: Saad L
 
 package IA : Tuan N
 
-class Labyrinthe Yunnus S & Sandric C
+class Labyrinthe Yunus S & Sandric C
 
 main : Sandric C
 
