@@ -1,11 +1,7 @@
-#Editeur des codes:
-
-package model: Saad L
-
-package IA : Tuan N
-
+#les codes ci-joints ont été réalisé par:
 class windows :David N
-
-class main : Sandric C
-
-class Labyrinthe : Yunus S
+package model: Saad L
+package IA : Tuan N
+class Labyrinthe Yunnus S & Sandric C
+main : Sandric C
+assemblage code: Sandric C
