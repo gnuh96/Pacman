@@ -1,4 +1,5 @@
 package model;
+import IA.*;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Color;
@@ -6,8 +7,11 @@ import javax.swing.JComponent;
 import java.awt.Dimension;
 public class PacCompoments extends JComponent //component class for storing the Tanks, moving them at once
 {
-    public Player pac; //the object that represents pacman
-
+    public Player pac; //create pac
+    public Fantome red;//create red ghosts
+    public Fantome blue;//create blue ghosts
+    public Fantome yellow;//create yellow ghosts
+    public Fantome pink;//create pink ghosts
     public boolean win = false; //boolean dependent on winning
     public boolean gameOver = false; //boolean dependent on loosing
     public boolean stopped = true; //boolean that stops and starts the game
@@ -33,7 +37,7 @@ public class PacCompoments extends JComponent //component class for storing the 
     {
 
         pac.draw(g); //draws pacman
-
+        //fantome.
         if(stopped) {//draws stop screen
             g.setColor(Color.BLACK);
             g.fillRect((994-300)/2,(692-150)/2,300,150);
