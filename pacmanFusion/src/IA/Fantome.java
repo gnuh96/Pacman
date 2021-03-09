@@ -45,6 +45,22 @@ public abstract class Fantome implements AI {
 	public int getValue() {
 		return scoreValue;
 	}
+	
+	/**
+	 * Obtient la cordonnee horizontale de Fantome.
+	 * @return la cordonnee horizontale de Fantome.
+	 */
+	public int getX(){
+            return this.startX;
+        }
+	
+	/**
+	 * Obtient la cordonnee verticale de Fantome.
+	 * @return la cordonnee verticale de Fantome.
+	 */
+        public int getY(){
+            return this.startY;
+        }
 
 	/**
 	 * Cela obtient une direction de mouvement en utilisant l'IA du Fantome.
