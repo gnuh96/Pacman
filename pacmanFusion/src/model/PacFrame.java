@@ -1,16 +1,17 @@
 package model;
+
 import javax.swing.*;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
-import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 
 public class PacFrame extends JFrame implements KeyListener,ActionListener{
 
     PacCompoments kcomp;
+    Labyrinthe lab;
     private static Timer t;
     boolean stopped = true;
 
@@ -20,8 +21,9 @@ public class PacFrame extends JFrame implements KeyListener,ActionListener{
     //during initialization frame is set, keylistener and action listener are set
     public PacFrame() {
         setLayout(new BorderLayout());
-        laby = new ImageIcon(this.getClass().getResource("labytest.jpg"));//COMME AVEC LE MENU
+        laby = new ImageIcon(this.getClass().getResource("resources/labytest.jpg"));//COMME AVEC LE MENU
         labytest = new JLabel(laby);//POUR AJOUTER LIMAGE
+        lab = new Labyrinthe();
         kcomp = new PacCompoments();
         getContentPane().add(kcomp, BorderLayout.CENTER); //game is in center
         getContentPane().add(labytest);//REMPLACER "labytest" par METHODE CREER LABY
@@ -36,9 +38,6 @@ public class PacFrame extends JFrame implements KeyListener,ActionListener{
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
-    }
-    public void AfficherLaby(){
-
     }
     public void keyPressed(KeyEvent e) {
         //inputs have a use while game is not finished

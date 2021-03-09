@@ -11,7 +11,7 @@ public class windows extends javax.swing.JFrame{
     public windows(){
 
         //ajout image de fond
-        image1 = new ImageIcon(this.getClass().getResource("resources/menu.jpg"));
+        image1 = new ImageIcon(this.getClass().getResource("model/resources/menu.jpg"));
         label = new JLabel(image1);
         label.setSize(800,600); //taille de l'image dans la fenêtre
         frame = new JFrame("Pac-Man");   //"titre" de la fenêtre
@@ -47,16 +47,12 @@ public class windows extends javax.swing.JFrame{
         JButton bouton6 = new JButton("Quitter le jeu");
         bouton6.setBounds(310, 500, 170, 50); // position bouton 6
         label.add(bouton6);
-        
-        // mise en place de l'action des boutons (quand on clique dessus)
-        // bouton "Commencer la partie"
+
         bouton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new model.PacFrame();
-            }
-        });
-        
-        // bouton "Quitter le jeu"
+                                      public void actionPerformed(ActionEvent e) {
+                                          new model.PacFrame();
+                                      }
+                                  });
         bouton6.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.exit(0); //on clique sur le bouton, la fenêtre se ferme
