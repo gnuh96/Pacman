@@ -47,12 +47,16 @@ public class windows extends javax.swing.JFrame{
         JButton bouton6 = new JButton("Quitter le jeu");
         bouton6.setBounds(310, 500, 170, 50); // position bouton 6
         label.add(bouton6);
-
+        
+        // mise en place de l'action des boutons (quand on clique dessus)
+        // bouton "Commencer la partie"
         bouton.addActionListener(new ActionListener() {
-                                      public void actionPerformed(ActionEvent e) {
-                                          new model.PacFrame();
-                                      }
-                                  });
+            public void actionPerformed(ActionEvent e) {
+                new model.PacFrame();
+            }
+        });
+        
+        // bouton "Quitter le jeu"
         bouton6.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.exit(0); //on clique sur le bouton, la fenêtre se ferme
