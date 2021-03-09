@@ -39,11 +39,6 @@ public abstract class Fantome implements AI {
 	}
 
 	/**
-	 * Obtient le score de Fantome.
-	 * @return le score de Fantome.
-	 */
-
-	/**
 	 * Obtient la cordonnee horizontale de Fantome.
 	 * @return la cordonnee horizontale de Fantome.
 	 */
@@ -58,7 +53,11 @@ public abstract class Fantome implements AI {
 	public int getY(){
 		return this.startY;
 	}
-
+	
+	/**
+	 * Obtient le score de Fantome.
+	 * @return le score de Fantome.
+	 */
 	public int getValue() {
 		return scoreValue;
 	}
