@@ -1,18 +1,19 @@
 package IA;
+
 /**
  * Représente un personnage Fantome qui poursuit PacMan. Un fantôme est contrôlé par une IA. 
  * Les fantômes peuvent chasser PacMan et essayer de le manger en entrant en collision 
  * avec lui. Si PacMan mange un Power Pellet, le mode scatter est
  * initié et un fantôme peut être mangé s'il est touché par PacMan.
 **/
-public abstract class Fantome implements AI {
+public class Fantome {
 
 	private int startX;
 	private int startY;
 	private int speed;
 	
-	protected Direction lastDirection = Direction.LEFT;
-	protected Direction curDirection;
+	private Direction lastDirection = Direction.LEFT;
+	private Direction curDirection;
 	
 	/**
 	 * le valeur de l'objet
@@ -63,23 +64,6 @@ public abstract class Fantome implements AI {
 	}
 
 	/**
-	 * Cela obtient une direction de mouvement en utilisant l'IA du Fantome.
-	 * Direction @return
-	 */
-	protected abstract Direction getAIMove();
-	
-	
-	/**
-	 * Fantome emprunte l'itinéraire le plus rapide pour trouver Pacman. 
-	 * Il essaie de s'aligner avec Pacman d'abord horizontalement, puis verticalement.
-	 *
-	public Direction getMove()
-	{
-		return getAIMove();
-	}
-	*/
-
-	/**
 	 *  verifie que la direction est bloque par un mur
 	 */
 	public boolean moveIsAllowed(Direction d) 
@@ -87,7 +71,7 @@ public abstract class Fantome implements AI {
 		return true;
 	}
 	
-	protected void tryMove(int curX, int curY, int targetX, int targetY){
+	private void tryMove(int curX, int curY, int targetX, int targetY){
 		int horizontalDifference = curX - targetX;
 		int verticalDifference = curY - targetY;
 		Direction preferredHorizontal = horizontalDifference > 0 ? Direction.LEFT : Direction.RIGHT;

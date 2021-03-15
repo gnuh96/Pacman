@@ -5,13 +5,13 @@ import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
 
-public class pacman {
+public class Pacman {
 
     private int x;
     private int y;
     private BufferedImage img;
 
-    public pacman(int x, int y, char name) {
+    public Pacman(int x, int y, char name) {
         this.setX(x);
         this.setY(y);
         this.setImage(name);
