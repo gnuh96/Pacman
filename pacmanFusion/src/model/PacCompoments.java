@@ -63,6 +63,25 @@ public class PacCompoments extends JComponent //component class for storing the 
             g.setColor(Color.WHITE);
             g.drawString("GAME OVER",(994-200)/2+53,(692-20)/2);
         }
+        
+        Image img = null;
+        try {
+            img = ImageIO.read(new File("src/model/resources/murDroit.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Labyrinthe lb = new Labyrinthe();
+        int[][] tab = lb.getTab();
+        for (int i = 0; i < 21; i++) {
+            for(int j = 0; j < 21; j++) {
+                if (tab[i][j]==1){
+                    g.drawImage(img, i*30, j*30, this);
+                }
+
+
+            }
+        }
     }
 
     public void reDraw() //repaints and sets variables dependent on time
