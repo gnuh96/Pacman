@@ -1,12 +1,18 @@
 package model;
-import IA.*;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 import java.awt.Color;
+import IA.Fantome;
+
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import java.awt.Dimension;
 public class PacCompoments extends JComponent //component class for storing the Tanks, moving them at once
-{
+{	
+	public static PacCompoments gameInstance;
     public Player pac; //create pac
     public Fantome red;//create red ghosts
     public Fantome blue;//create blue ghosts
@@ -27,6 +33,24 @@ public class PacCompoments extends JComponent //component class for storing the 
         pac = new Player(481,568,30);
 
     }
+    
+    public static PacCompoments getInstance() {
+		return gameInstance;
+	}
+    
+    
+
+	public Player getPac() {
+		return pac;
+	}
+
+	public void setPac(Player pac) {
+		this.pac = pac;
+	}
+
+	public static void setInstance(PacCompoments pacCompoments) {
+		gameInstance = pacCompoments;
+	}
 
     public void getState(boolean b) //takes start/stop state from PacFrame
     {
