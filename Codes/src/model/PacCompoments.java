@@ -31,6 +31,10 @@ public class PacCompoments extends JComponent //component class for storing the 
         this.setSize(new Dimension(992,692));
 
         pac = new Player(481,568,30);
+        red = new Fantome(481, 798, 6, "blinky");
+        blue = new Fantome(481, 798, 5, "inky");
+        yellow = new Fantome(481, 798, 5, "clyde");
+        pink = new Fantome(481, 798, 6, "pinky");
 
     }
     

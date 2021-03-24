@@ -35,7 +35,7 @@ public class Fantome {
 	 * @param y c'est la coordonnée y initiale
 	 * @param speed la vitesse à laquelle le Fantome se déplace
 	 */
-	public Fantome(int x, int y, int speed, char name) {
+	public Fantome(int x, int y, int speed, String name) {
 		this.speed = speed;
 		x = x;
 		y = y;
@@ -45,7 +45,7 @@ public class Fantome {
 	
 	public void setImage(char name) {
         try {
-            this.img = ImageIO.read(new File("png/" + name + ".png"));
+            this.img = ImageIO.read(new File("resources/" + name + ".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
