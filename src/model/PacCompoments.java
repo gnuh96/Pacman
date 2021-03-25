@@ -273,7 +273,7 @@ public class PacCompoments extends JComponent //component class for storing the 
 
     public void reDraw() //repaints and sets variables dependent on time
     {
-         pac.r = true;
+         pac.right = true;
 
 
         pac.move(); //changes variables in pacman
