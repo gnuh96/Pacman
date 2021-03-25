@@ -279,19 +279,19 @@ public class PacCompoments extends JComponent //component class for storing the 
         if (tab[pac.getX()/30][pac.getY()/30]==2){
             tab[pac.getX()/30][pac.getY()/30]=8;
         }
-            if(tab[pac.getX()/30][(pac.getY()-3)/30]==1){
+            if(tab[pac.getX()/30][(pac.getY()-1)/30]==1){
                 System.out.println("N");
                 pac.u = false;
             }
-            if(tab[pac.getX()/30][(pac.getY()+33)/30]==1){
+            if(tab[pac.getX()/30][(pac.getY()+30)/30]==1){
                 System.out.println("S");
                 pac.d = false;
             }
-            if(tab[(pac.getX()+33)/30][(pac.getY())/30]==1){
+            if(tab[(pac.getX()+30)/30][(pac.getY())/30]==1){
                 System.out.println("E");
                 pac.r = false;
             }
-            if(tab[(pac.getX()-3)/30][(pac.getY())/30]==1){
+            if(tab[(pac.getX()-1)/30][(pac.getY())/30]==1){
                 System.out.println("W");
                 pac.l = false;
             }
