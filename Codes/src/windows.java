@@ -11,7 +11,7 @@ public class windows extends javax.swing.JFrame{
     public windows(){
 
         //ajout image de fond
-        image1 = new ImageIcon(this.getClass().getResource("model/resources/menu.jpg"));
+        image1 = new ImageIcon(this.getClass().getResource("resources/menu.jpg"));
         label = new JLabel(image1);
         label.setSize(800,600); //taille de l'image dans la fenêtre
         frame = new JFrame("Pac-Man");   //"titre" de la fenêtre

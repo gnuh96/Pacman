@@ -83,23 +83,23 @@ public class PacComponents extends JComponent //component class for storing the 
 
 
         try {
-            murh = ImageIO.read(new File("Pacman/Codes/src/model/resources/murDroit.png"));
-            murv = ImageIO.read(new File("Pacman/Codes/src/model/resources/murDroit2.png"));
-            angle1 = ImageIO.read(new File("Pacman/Codes/src/model/resources/murAngle.png"));
-            angle2 = ImageIO.read(new File("Pacman/Codes/src/model/resources/murAngle2.png"));
-            angle3 = ImageIO.read(new File("Pacman/Codes/src/model/resources/murAngle3.png"));
-            angle4 = ImageIO.read(new File("Pacman/Codes/src/model/resources/murAngle4.png"));
-            gomme = ImageIO.read(new File("Pacman/Codes/src/model/resources/point.png"));
-            vide = ImageIO.read(new File("Pacman/Codes/src/model/resources/vide.png"));
-            croisement = ImageIO.read(new File("Pacman/Codes/src/model/resources/croisement.png"));
-            croiseT = ImageIO.read(new File("Pacman/Codes/src/model/resources/croiseT.png"));
-            croiseT2 = ImageIO.read(new File("Pacman/Codes/src/model/resources/croiseT2.png"));
-            croiseT3 = ImageIO.read(new File("Pacman/Codes/src/model/resources/croiseT3.png"));
-            croiseT4 = ImageIO.read(new File("Pacman/Codes/src/model/resources/croiseT4.png"));
-            cds = ImageIO.read(new File("Pacman/Codes/src/model/resources/murCulDeSac3.png"));
-            cds2 = ImageIO.read(new File("Pacman/Codes/src/model/resources/murCulDeSac2.png"));
-            cds3 = ImageIO.read(new File("Pacman/Codes/src/model/resources/murCulDeSac.png"));
-            cds4 = ImageIO.read(new File("Pacman/Codes/src/model/resources/murCulDeSac4.png"));
+            murh = ImageIO.read(new File("resources/murDroit.png"));
+            murv = ImageIO.read(new File("resources/murDroit2.png"));
+            angle1 = ImageIO.read(new File("resources/murAngle.png"));
+            angle2 = ImageIO.read(new File("resources/murAngle2.png"));
+            angle3 = ImageIO.read(new File("resources/murAngle3.png"));
+            angle4 = ImageIO.read(new File("resources/murAngle4.png"));
+            gomme = ImageIO.read(new File("resources/point.png"));
+            vide = ImageIO.read(new File("resources/vide.png"));
+            croisement = ImageIO.read(new File("resources/croisement.png"));
+            croiseT = ImageIO.read(new File("resources/croiseT.png"));
+            croiseT2 = ImageIO.read(new File("resources/croiseT2.png"));
+            croiseT3 = ImageIO.read(new File("resources/croiseT3.png"));
+            croiseT4 = ImageIO.read(new File("resources/croiseT4.png"));
+            cds = ImageIO.read(new File("resources/murCulDeSac3.png"));
+            cds2 = ImageIO.read(new File("resources/murCulDeSac2.png"));
+            cds3 = ImageIO.read(new File("resources/murCulDeSac.png"));
+            cds4 = ImageIO.read(new File("resources/murCulDeSac4.png"));
 
         } catch (IOException e) {
             e.printStackTrace();
