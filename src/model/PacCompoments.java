@@ -10,14 +10,14 @@ import IA.Fantome;
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import java.awt.Dimension;
-public class PacCompoments extends JComponent //component class for storing the Tanks, moving them at once
+public class PacCompoments extends JComponent //classe de composant pour stocker les réservoirs, les déplacer à la fois
 {	
 	public static PacCompoments gameInstance;
-    public Player pac; //create pac
-    public Fantome red;//create red ghosts
+    public Player pac; //cree pac
+    public Fantome red;//créer des fantômes rouges
     public Fantome blue;//create blue ghosts
-    public Fantome yellow;//create yellow ghosts
-    public Fantome pink;//create pink ghosts
+    public Fantome yellow;//créer des fantômes bleus
+    public Fantome pink;//créer des fantômes roses
     int[][] tab;
 
     public Image murh = null; //murHorizontal
@@ -37,15 +37,15 @@ public class PacCompoments extends JComponent //component class for storing the 
     public Image cds2 = null;
     public Image cds3 = null;
     public Image cds4 = null;
-    public boolean win = false; //boolean dependent on winning
-    public boolean gameOver = false; //boolean dependent on loosing
-    public boolean stopped = true; //boolean that stops and starts the game
+    public boolean win = false; //booléen dépendant du gain
+    public boolean gameOver = false; //booléen dépendant de la perte
+    public boolean stopped = true; //booléen qui arrête et démarre le jeu
 
-    int counter = 0; //counter to track time
-    boolean dead = false; //boolean that shows if pacman died
-    boolean ghostEat = false; //boolean that shows ghosts are escaping
+    int counter = 0; //compteur pour suivre le temps
+    boolean dead = false; //booléen qui montre si pacman est mort
+    boolean ghostEat = false; //booléen qui montre que les fantômes s'échappent
 
-    public PacCompoments() //in constructor variables are initialized
+    public PacCompoments() //dans les variables du constructeur sont initialisées
     {
         this.setSize(new Dimension(645,668));
 
@@ -105,12 +105,12 @@ public class PacCompoments extends JComponent //component class for storing the 
 		gameInstance = pacCompoments;
 	}
 
-    public void getState(boolean b) //takes start/stop state from PacFrame
+    public void getState(boolean b) //prend l'état de démarrage / d'arrêt de PacFrame
     {
         stopped = b;
     }
 
-    public void paintComponent(Graphics g) //draws every object
+    public void paintComponent(Graphics g) //dessine chaque objet
     {
         //LABY
         for (int i = 0; i < 21; i++) {
@@ -241,9 +241,9 @@ public class PacCompoments extends JComponent //component class for storing the 
                 }
 
             }
-            pac.draw(g); //draws pacman
+            pac.draw(g); //dessine pacman
         }
-        if(stopped) {//draws stop screen
+        if(stopped) {//dessine l'écran d'arrêt
             g.setColor(Color.BLACK);
             g.fillRect((645-300)/2,(668-150)/2,300,150);
             g.setColor(new Color(29,28,229));
@@ -252,7 +252,7 @@ public class PacCompoments extends JComponent //component class for storing the 
             g.drawString("PRESS SPACEBAR",(645-300)/2+65,(668-20)/2);
             g.drawString("TO START/STOP",(645-300)/2+71,(668-20)/2+20);
         }
-        if(win) { //draws win screen
+        if(win) { //dessine l'écran de victoire
             g.setColor(Color.BLACK);
             g.fillRect((645-300)/2,(668-150)/2,300,150);
             g.setColor(new Color(29,28,229));
@@ -260,7 +260,7 @@ public class PacCompoments extends JComponent //component class for storing the 
             g.setColor(Color.WHITE);
             g.drawString("YOU WIN!",(645-200)/2+53,(668-20)/2);
         }
-        if(gameOver) {//draws game over screen
+        if(gameOver) {//dessine le jeu sur l'écran
             g.setColor(Color.BLACK);
             g.fillRect((645-300)/2,(668-150)/2,300,150);
             g.setColor(new Color(29,28,229));
@@ -271,12 +271,12 @@ public class PacCompoments extends JComponent //component class for storing the 
         
     }
 
-    public void reDraw() //repaints and sets variables dependent on time
+    public void reDraw() //repeint et définit les variables en fonction du temps
     {
          pac.right = true;
 
 
-        pac.move(); //changes variables in pacman
-        repaint(); //repaints...
+        pac.move(); //change les variables dans pacman
+        repaint(); //repeint ...
     }
 }
