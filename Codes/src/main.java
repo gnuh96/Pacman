@@ -7,6 +7,7 @@ import static java.lang.Thread.sleep;
 public class main {
     public static void main(String [] args){
 
-        new windows(); // windows+menu
+        windows wds = new windows(); // windows+menu
     }
+
 }
