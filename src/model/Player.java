@@ -129,15 +129,15 @@ public class Player {
                 angle = 210;
             }
             if(up||direction=='N') {
-                if(!left&&right) xvel=4;
-                if(!right&&left) xvel=-4;
+                if(!left&&right) xvel=0;
+                if(!right&&left) xvel=0;
                 direction = 'N';
                 yvel=-4;
                 angle = 120;
             }
             if(down||direction=='S') {
-                if(!left&&right) xvel=4;
-                if(!right&&left) xvel=-4;
+                if(!left&&right) xvel=0;
+                if(!right&&left) xvel=0;
                 direction = 'S';
                 yvel=4;
                 angle = 300;
