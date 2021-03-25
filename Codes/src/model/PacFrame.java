@@ -10,23 +10,17 @@ import java.awt.event.KeyListener;
 
 public class PacFrame extends JFrame implements KeyListener,ActionListener{
 
-    PacCompoments kcomp;
+    PacComponents kcomp;
     Labyrinthe lab;
     private static Timer t;
     boolean stopped = true;
 
-    private ImageIcon laby;//POUR TESTER LIMPORTATION DUN LABY
-    private JLabel labytest;
-
     //during initialization frame is set, keylistener and action listener are set
     public PacFrame() {
         setLayout(new BorderLayout());
-        laby = new ImageIcon(this.getClass().getResource("resources/labytest.jpg"));//COMME AVEC LE MENU
-        labytest = new JLabel(laby);//POUR AJOUTER LIMAGE
         lab = new Labyrinthe();
-        kcomp = new PacCompoments();
+        kcomp = new PacComponents();
         getContentPane().add(kcomp, BorderLayout.CENTER); //game is in center
-        getContentPane().add(labytest);//REMPLACER "labytest" par METHODE CREER LABY
         addKeyListener(this);
         ActionListener listener = this;
         final int DELAY = 20;

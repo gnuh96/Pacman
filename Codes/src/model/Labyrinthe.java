@@ -4,7 +4,7 @@ import java.io.*;
 public class Labyrinthe {
     private int nbrpac;//nombre total de pacgomme
     private int [][] tab;
-    private String path = "src/model/data/Laby.txt";
+    private String path = "Pacman/Codes/src/model/data/Laby.txt";
 
     public Labyrinthe(){//Constructeur
         this.nbrpac = 0;
@@ -28,7 +28,7 @@ public class Labyrinthe {
             String ligne;
             while((ligne = reader.readLine()) != null){
                 if(ligne.startsWith("{")||ligne.startsWith("}")){
-                    System.out.println(ligne);
+                   // System.out.println(ligne);
                     tableau += ligne;
                 }
             }

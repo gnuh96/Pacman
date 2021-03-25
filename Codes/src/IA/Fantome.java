@@ -45,7 +45,7 @@ public class Fantome {
 	
 	public void setImage(String name) {
         try {
-            this.img = ImageIO.read(new File("resources/" + name + ".png"));
+            this.img = ImageIO.read(new File("Pacman/Codes/src/model/resources/" + name + ".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -100,7 +100,7 @@ public class Fantome {
 	protected Direction getAIMove() {
 		int curX = this.getX();
 		int curY = this.getY();
-		PacCompoments state = PacCompoments.getInstance();
+		PacComponents state = PacComponents.getInstance();
 		Player pm = state.getPac();
 		int targetX = pm.getX();
 		int targetY = pm.getY();
