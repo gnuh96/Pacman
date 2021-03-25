@@ -276,26 +276,28 @@ public class PacCompoments extends JComponent //component class for storing the 
         pac.d = true;
         pac.l = true;
         pac.r = true;
-        if (tab[pac.getX()/30][pac.getY()/30]==2){
-            tab[pac.getX()/30][pac.getY()/30]=8;
-        }
-            if(tab[pac.getX()/30][(pac.getY()-1)/30]==1){
+        if (pac.getY()-1 > 0 && pac.getY() / 30 < 20 && pac.getX() / 30 < 20 && pac.getX()-1 > 0) {
+            if (tab[pac.getX() / 30][pac.getY() / 30] == 2) {
+                tab[pac.getX() / 30][pac.getY() / 30] = 8;
+            }
+            if (tab[pac.getX() / 30][(pac.getY() - 1) / 30] == 1) {
                 System.out.println("N");
                 pac.u = false;
             }
-            if(tab[pac.getX()/30][(pac.getY()+30)/30]==1){
+            if (tab[pac.getX() / 30][(pac.getY() + 30) / 30] == 1) {
                 System.out.println("S");
                 pac.d = false;
             }
-            if(tab[(pac.getX()+30)/30][(pac.getY())/30]==1){
+            if (tab[(pac.getX() + 30) / 30][pac.getY() / 30] == 1) {
                 System.out.println("E");
                 pac.r = false;
             }
-            if(tab[(pac.getX()-1)/30][(pac.getY())/30]==1){
+            if (tab[(pac.getX() - 1) / 30][(pac.getY()) / 30] == 1) {
                 System.out.println("W");
                 pac.l = false;
             }
-        pac.move(); //changes variables in pacman
-        repaint(); //repaints...
+        }
+            pac.move(); //changes variables in pacman
+            repaint(); //repaints...
     }
 }
