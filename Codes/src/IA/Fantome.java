@@ -43,7 +43,7 @@ public class Fantome {
 		this.setImage(name);
 	}		
 	
-	public void setImage(char name) {
+	public void setImage(String name) {
         try {
             this.img = ImageIO.read(new File("resources/" + name + ".png"));
         } catch (IOException e) {
