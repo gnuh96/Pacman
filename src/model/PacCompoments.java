@@ -28,7 +28,7 @@ public class PacCompoments extends JComponent //component class for storing the 
 
     public PacCompoments() //in constructor variables are initialized
     {
-        this.setSize(new Dimension(992,668));
+        this.setSize(new Dimension((645,668));
 
         pac = new Player(481,568,30);
         red = new Fantome(481, 798, 6, "blinky");
