@@ -92,15 +92,15 @@ public class Player {
             //if in left portal, teleports pacman to right portal
             if((int) (border.getBounds2D().getX()+border.getBounds2D().getWidth())<0)
             {
-                leftBor.setRect(988-13-3, (int) leftBor.getBounds2D().getY()+yvel, leftBor.getBounds2D().getWidth(), leftBor.getBounds2D().getHeight());
-                rightBor.setRect(988+diameter+1-3, (int) rightBor.getBounds2D().getY()+yvel, rightBor.getBounds2D().getWidth(), rightBor.getBounds2D().getHeight());
-                upBor.setRect(987-3, (int) upBor.getBounds2D().getY()+yvel, upBor.getBounds2D().getWidth(), upBor.getBounds2D().getHeight());
-                downBor.setRect(987-3, (int) downBor.getBounds2D().getY()+yvel, downBor.getBounds2D().getWidth(), downBor.getBounds2D().getHeight());
-                border.setRect(988-3, (int) border.getBounds2D().getY()+yvel, diameter, diameter);
-                bor.setRect(988-3+14, (int) bor.getBounds2D().getY()+yvel, 2, 2);
+                leftBor.setRect(645-13-3, (int) leftBor.getBounds2D().getY()+yvel, leftBor.getBounds2D().getWidth(), leftBor.getBounds2D().getHeight());
+                rightBor.setRect(645+diameter+1-3, (int) rightBor.getBounds2D().getY()+yvel, rightBor.getBounds2D().getWidth(), rightBor.getBounds2D().getHeight());
+                upBor.setRect(645-3, (int) upBor.getBounds2D().getY()+yvel, upBor.getBounds2D().getWidth(), upBor.getBounds2D().getHeight());
+                downBor.setRect(645-3, (int) downBor.getBounds2D().getY()+yvel, downBor.getBounds2D().getWidth(), downBor.getBounds2D().getHeight());
+                border.setRect(645-3, (int) border.getBounds2D().getY()+yvel, diameter, diameter);
+                bor.setRect(645-3+14, (int) bor.getBounds2D().getY()+yvel, 2, 2);
             }
             //il envoie le packman dans l'autre porte
-            if((int) (border.getBounds2D().getX())>992)
+            if((int) (border.getBounds2D().getX())>645)
             {
                 leftBor.setRect(0-13+3-border.getBounds2D().getWidth(), (int) leftBor.getBounds2D().getY()+yvel, leftBor.getBounds2D().getWidth(), leftBor.getBounds2D().getHeight());
                 rightBor.setRect(0+diameter+1+3-border.getBounds2D().getWidth(), (int) rightBor.getBounds2D().getY()+yvel, rightBor.getBounds2D().getWidth(), rightBor.getBounds2D().getHeight());
