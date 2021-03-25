@@ -24,6 +24,7 @@ public class Player {
         int yvel = 0;
         char direction = 'E'; //shows direction
         public boolean up,down,right,left; //booleans to move the pacman
+        public boolean u,d,r,l = true; //these booleans check if directions are empty
 
         public Player(int x, int y, int size) {
             xpos = x;
@@ -64,19 +65,19 @@ public class Player {
             down = false;
             right = false;
             left = false;
-            if(i == 38){
+            if(i == 38){//Up
                 up = true;
                 down = false;
             }
-            if(i == 39){
+            if(i == 39){//Right
                 right = true;
                 left = false;
             }
-            if(i == 37){
+            if(i == 37){//Left
                 left = true;
                 right = false;
             }
-            if(i == 40){
+            if(i == 40){//Down
                 down = true;
                 up = false;
             }
@@ -91,15 +92,15 @@ public class Player {
             //if in left portal, teleports pacman to right portal
             if((int) (border.getBounds2D().getX()+border.getBounds2D().getWidth())<0)
             {
-                leftBor.setRect(645-13-3, (int) leftBor.getBounds2D().getY()+yvel, leftBor.getBounds2D().getWidth(), leftBor.getBounds2D().getHeight());
-                rightBor.setRect(645+diameter+1-3, (int) rightBor.getBounds2D().getY()+yvel, rightBor.getBounds2D().getWidth(), rightBor.getBounds2D().getHeight());
-                upBor.setRect(645-3, (int) upBor.getBounds2D().getY()+yvel, upBor.getBounds2D().getWidth(), upBor.getBounds2D().getHeight());
-                downBor.setRect(645-3, (int) downBor.getBounds2D().getY()+yvel, downBor.getBounds2D().getWidth(), downBor.getBounds2D().getHeight());
-                border.setRect(645-3, (int) border.getBounds2D().getY()+yvel, diameter, diameter);
-                bor.setRect(645-3+14, (int) bor.getBounds2D().getY()+yvel, 2, 2);
+                leftBor.setRect(648-13-3, (int) leftBor.getBounds2D().getY()+yvel, leftBor.getBounds2D().getWidth(), leftBor.getBounds2D().getHeight());
+                rightBor.setRect(648+diameter+1-3, (int) rightBor.getBounds2D().getY()+yvel, rightBor.getBounds2D().getWidth(), rightBor.getBounds2D().getHeight());
+                upBor.setRect(987-3, (int) upBor.getBounds2D().getY()+yvel, upBor.getBounds2D().getWidth(), upBor.getBounds2D().getHeight());
+                downBor.setRect(987-3, (int) downBor.getBounds2D().getY()+yvel, downBor.getBounds2D().getWidth(), downBor.getBounds2D().getHeight());
+                border.setRect(648-3, (int) border.getBounds2D().getY()+yvel, diameter, diameter);
+                bor.setRect(648-3+14, (int) bor.getBounds2D().getY()+yvel, 2, 2);
             }
             //il envoie le packman dans l'autre porte
-            if((int) (border.getBounds2D().getX())>645)
+            if((int) (border.getBounds2D().getX())>648)
             {
                 leftBor.setRect(0-13+3-border.getBounds2D().getWidth(), (int) leftBor.getBounds2D().getY()+yvel, leftBor.getBounds2D().getWidth(), leftBor.getBounds2D().getHeight());
                 rightBor.setRect(0+diameter+1+3-border.getBounds2D().getWidth(), (int) rightBor.getBounds2D().getY()+yvel, rightBor.getBounds2D().getWidth(), rightBor.getBounds2D().getHeight());
@@ -114,32 +115,32 @@ public class Player {
             if(theta<0||theta>30) close*=-1; //changes mouth movement
             theta-=close; //changes mouth movement
             //following if loops are used for movement in different directions
-            if(right||direction=='E') {
-                if(!up&&down) yvel=4;
-                if(!down&&up) yvel=-4;
+            if((right||direction=='E')&r) {
+                r = true;
+                yvel=0;
                 direction = 'E';
-                xvel=4;
+                xvel=3;
                 angle = 30;
             }
-            if(left||direction =='W') {
-                if(!up&&down) yvel=4;
-                if(!down&&up) yvel=-4;
+            if((left||direction =='W')&l){
+                l =true;
+                yvel=0;
                 direction = 'W';
-                xvel=-4;
+                xvel=-3;
                 angle = 210;
             }
-            if(up||direction=='N') {
-                if(!left&&right) xvel=0;
-                if(!right&&left) xvel=0;
+            if((up||direction=='N')&u) {
+                u = true;
+                xvel=0;
                 direction = 'N';
-                yvel=-4;
+                yvel=-3;
                 angle = 120;
             }
-            if(down||direction=='S') {
-                if(!left&&right) xvel=0;
-                if(!right&&left) xvel=0;
+            if((down||direction=='S')&d) {
+                d = true;
+                xvel=0;
                 direction = 'S';
-                yvel=4;
+                yvel=3;
                 angle = 300;
             }
             //in the end variables that store the positions are set
