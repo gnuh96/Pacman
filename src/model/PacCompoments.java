@@ -18,6 +18,25 @@ public class PacCompoments extends JComponent //component class for storing the 
     public Fantome blue;//create blue ghosts
     public Fantome yellow;//create yellow ghosts
     public Fantome pink;//create pink ghosts
+    int[][] tab;
+
+    public Image murh = null; //murHorizontal
+    public Image murv = null; //murVertical
+    public Image angle1 = null;
+    public Image angle2 = null;
+    public Image angle3 = null;
+    public Image angle4 = null;
+    public Image gomme = null;
+    public Image vide = null;
+    public Image croisement =null;
+    public Image croiseT = null;
+    public Image croiseT2 = null;
+    public Image croiseT3 = null;
+    public Image croiseT4 = null;
+    public Image cds = null;
+    public Image cds2 = null;
+    public Image cds3 = null;
+    public Image cds4 = null;
     public boolean win = false; //boolean dependent on winning
     public boolean gameOver = false; //boolean dependent on loosing
     public boolean stopped = true; //boolean that stops and starts the game
@@ -35,52 +54,12 @@ public class PacCompoments extends JComponent //component class for storing the 
         blue = new Fantome(481, 798, 5, "inky");
         yellow = new Fantome(481, 798, 5, "clyde");
         pink = new Fantome(481, 798, 6, "pinky");
-
+        Labyrinthe lb = new Labyrinthe();
+        tab = lb.getTab();
+        InitLaby();
     }
-    
-    public static PacCompoments getInstance() {
-		return gameInstance;
-	}
-    
-    
+    public void InitLaby(){
 
-	public Player getPac() {
-		return pac;
-	}
-
-	public void setPac(Player pac) {
-		this.pac = pac;
-	}
-
-	public static void setInstance(PacCompoments pacCompoments) {
-		gameInstance = pacCompoments;
-	}
-
-    public void getState(boolean b) //takes start/stop state from PacFrame
-    {
-        stopped = b;
-    }
-
-    public void paintComponent(Graphics g) //draws every object
-    {
-
-        Image murh = null; //murHorizontal
-        Image murv = null; //murVertical
-        Image angle1 = null;
-        Image angle2 = null;
-        Image angle3 = null;
-        Image angle4 = null;
-        Image gomme = null;
-        Image vide = null;
-        Image croisement =null;
-        Image croiseT = null;
-        Image croiseT2 = null;
-        Image croiseT3 = null;
-        Image croiseT4 = null;
-        Image cds = null;
-        Image cds2 = null;
-        Image cds3 = null;
-        Image cds4 = null;
 
 
         try {
@@ -106,8 +85,34 @@ public class PacCompoments extends JComponent //component class for storing the 
             e.printStackTrace();
         }
 
-        Labyrinthe lb = new Labyrinthe();
-        int[][] tab = lb.getTab();
+
+    }
+    public static PacCompoments getInstance() {
+		return gameInstance;
+	}
+    
+    
+
+	public Player getPac() {
+		return pac;
+	}
+
+	public void setPac(Player pac) {
+		this.pac = pac;
+	}
+
+	public static void setInstance(PacCompoments pacCompoments) {
+		gameInstance = pacCompoments;
+	}
+
+    public void getState(boolean b) //takes start/stop state from PacFrame
+    {
+        stopped = b;
+    }
+
+    public void paintComponent(Graphics g) //draws every object
+    {
+        //LABY
         for (int i = 0; i < 21; i++) {
             for(int j = 0; j < 21; j++) {
                 if (tab[i][j]==1){
@@ -236,12 +241,8 @@ public class PacCompoments extends JComponent //component class for storing the 
                 }
 
             }
+            pac.draw(g); //draws pacman
         }
-        
-        
-        
-        pac.draw(g); //draws pacman
-        //fantome.
         if(stopped) {//draws stop screen
             g.setColor(Color.BLACK);
             g.fillRect((645-300)/2,(668-150)/2,300,150);
