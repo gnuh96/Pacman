@@ -24,7 +24,6 @@ public class Player {
         int yvel = 0;
         char direction = 'E'; //shows direction
         public boolean up,down,right,left; //booleans to move the pacman
-        public boolean u,d,r,l = true; //these booleans check if directions are empty
 
         public Player(int x, int y, int size) {
             xpos = x;
@@ -115,30 +114,30 @@ public class Player {
             if(theta<0||theta>30) close*=-1; //changes mouth movement
             theta-=close; //changes mouth movement
             //following if loops are used for movement in different directions
-            if((right||direction=='E')&&r) {
-                if(!u&&d) yvel=4;
-                if(!d&&u) yvel=-4;
+            if(right||direction=='E') {
+                if(!up&&down) yvel=4;
+                if(!down&&up) yvel=-4;
                 direction = 'E';
                 xvel=4;
                 angle = 30;
             }
-            if((left||direction =='W')&&l) {
-                if(!u&&d) yvel=4;
-                if(!d&&u) yvel=-4;
+            if(left||direction =='W') {
+                if(!up&&down) yvel=4;
+                if(!down&&up) yvel=-4;
                 direction = 'W';
                 xvel=-4;
                 angle = 210;
             }
-            if((up||direction=='N')&&u) {
-                if(!l&&r) xvel=4;
-                if(!r&&l) xvel=-4;
+            if(up||direction=='N') {
+                if(!left&&right) xvel=4;
+                if(!right&&left) xvel=-4;
                 direction = 'N';
                 yvel=-4;
                 angle = 120;
             }
-            if((down||direction=='S')&&d) {
-                if(!l&&r) xvel=4;
-                if(!r&&l) xvel=-4;
+            if(down||direction=='S') {
+                if(!left&&right) xvel=4;
+                if(!right&&left) xvel=-4;
                 direction = 'S';
                 yvel=4;
                 angle = 300;
