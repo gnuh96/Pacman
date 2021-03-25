@@ -45,7 +45,7 @@ public class Fantome {
 	
 	public void setImage(String name) {
         try {
-            this.img = ImageIO.read(new File("Pacman/Codes/src/model/resources/" + name + ".png"));
+            this.img = ImageIO.read(new File("resources/" + name + ".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

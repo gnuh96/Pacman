@@ -4,7 +4,7 @@ import java.io.*;
 public class Labyrinthe {
     private int nbrpac;//nombre total de pacgomme
     private int [][] tab;
-    private String path = "Pacman/Codes/src/model/data/Laby.txt";
+    private String path = "resources/data/Laby.txt";
 
     public Labyrinthe(){//Constructeur
         this.nbrpac = 0;
