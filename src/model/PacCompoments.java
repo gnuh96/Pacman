@@ -50,13 +50,13 @@ public class PacCompoments extends JComponent //component class for storing the 
         this.setSize(new Dimension(645,668));
 
         pac = new Player(30,30,30);
-        red = new Fantome(481, 798, 6, "blinky");
-        blue = new Fantome(481, 798, 5, "inky");
-        yellow = new Fantome(481, 798, 5, "clyde");
-        pink = new Fantome(481, 798, 6, "pinky");
+        red = new Fantome(300, 300, 6, "blinky");
+        blue = new Fantome(300, 270, 5, "inky");
+        yellow = new Fantome(330, 300, 5, "clyde");
+        pink = new Fantome(330, 270, 6, "pinky");
         Labyrinthe lb = new Labyrinthe();
         tab = lb.getTab();
-        System.out.println(tab.length);
+        ////System.out.println(tab.length);
         InitLaby();
     }
     public void InitLaby(){
@@ -241,6 +241,10 @@ public class PacCompoments extends JComponent //component class for storing the 
 
             }
             pac.draw(g); //draws pacman
+            red.paint(g); //draws pacman
+            blue.paint(g); //draws pacman
+            yellow.paint(g); //draws pacman
+            pink.paint(g); //draws pacman
         }
         if(stopped) {//draws stop screen
             g.setColor(Color.BLACK);
@@ -281,19 +285,19 @@ public class PacCompoments extends JComponent //component class for storing the 
                 tab[pac.getX() / 30][pac.getY() / 30] = 8;
             }
             if (tab[pac.getX() / 30][(pac.getY() - 1) / 30] == 1) {
-                System.out.println("N");
+                //System.out.println("N");
                 pac.u = false;
             }
             if (tab[pac.getX() / 30][(pac.getY() + 30) / 30] == 1) {
-                System.out.println("S");
+                //System.out.println("S");
                 pac.d = false;
             }
             if (tab[(pac.getX() + 30) / 30][pac.getY() / 30] == 1) {
-                System.out.println("E");
+                //System.out.println("E");
                 pac.r = false;
             }
             if (tab[(pac.getX() - 1) / 30][(pac.getY()) / 30] == 1) {
-                System.out.println("W");
+                //System.out.println("W");
                 pac.l = false;
             }
         }
